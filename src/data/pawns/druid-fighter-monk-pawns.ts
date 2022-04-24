@@ -88,7 +88,7 @@ export const DruidFighterMonkPawns: (Pawn | Separator)[] = new BookHelper(
           .andMediumPawn("Human", "Tribal Champion")
       )
   )
-  .withPage("Front", 6, "Druid", (page) => page) // Filler page?
+  .withSeparatorPage("Front", 6, "Monk", "Dwarf", "Halfling / Gnome")
   .withSeparatorPage("Front", 7, "Monk", "Dwarf", "Halfling / Gnome")
   .withPage("Front", 8, "Monk", (page) =>
     page
