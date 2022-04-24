@@ -41,7 +41,7 @@ const PawnSearch = ({ pawnName, setPawnName }: Props) => {
               </Typography>
             );
           }}
-          value={pawnName}
+          value={pawnName || null}
           onChange={(_, val) => setPawnName(val ?? "")}
         />
       </Box>
