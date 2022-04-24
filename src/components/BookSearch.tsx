@@ -1,5 +1,6 @@
 import { Autocomplete, TextField } from "@mui/material";
-import { styled } from "@mui/system";
+import { Box, styled } from "@mui/system";
+import React from "react";
 import { AllBooks, BarbarianBardClericBook, Book } from "../data/books";
 
 type Props = {
@@ -17,16 +18,18 @@ const BookSearch = ({ book, setBook }: Props) => {
   const names = AllBooks.map((b) => b.fullName);
 
   return (
-    <Autocomplete
-      options={names}
-      renderInput={(params) => <SearchField variant="standard" {...params} />}
-      value={book.fullName}
-      onChange={(_, val) =>
-        setBook(
-          AllBooks.find((b) => b.fullName === val) ?? BarbarianBardClericBook
-        )
-      }
-    />
+    <Box onClick={(e) => e.stopPropagation()}>
+      <Autocomplete
+        options={names}
+        renderInput={(params) => <SearchField variant="standard" {...params} />}
+        value={book.fullName}
+        onChange={(_, val) =>
+          setBook(
+            AllBooks.find((b) => b.fullName === val) ?? BarbarianBardClericBook
+          )
+        }
+      />
+    </Box>
   );
 };
 

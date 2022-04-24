@@ -49,11 +49,16 @@ const PageLayout = () => {
     setPage(Math.min(page + 1, getMaxPageNumber(book, orientation)));
   const previousPage = () =>
     setPage(Math.max(page - 1, getMinPageNumber(book, orientation)));
+  const changeBook = (newBook: Book) => {
+    setBook(newBook);
+    setOrientation("Front");
+    setPage(getMinPageNumber(newBook, "Front"));
+  };
 
   return (
     <Grid container component="main" sx={{ height: "100vh" }}>
       <CssBaseline />
-      <Grid item component={Paper} xs={false} sm={4} md={4}>
+      <Grid item component={Paper} xs={false} sm={4} md={4} elevation={6}>
         <Box
           sx={{
             display: "flex",
@@ -65,7 +70,7 @@ const PageLayout = () => {
           <PawnSearch pawnName={pawnName} setPawnName={setPawnName} />
         </Box>
       </Grid>
-      <Grid item component={Paper} square xs={12} sm={8} md={8} elevation={6}>
+      <Grid item component={Paper} square xs={12} sm={8} md={8}>
         <BookDisplay
           book={book}
           orientation={orientation}
@@ -74,7 +79,7 @@ const PageLayout = () => {
           flip={flip}
           nextPage={nextPage}
           previousPage={previousPage}
-          setBook={setBook}
+          setBook={changeBook}
         />
       </Grid>
     </Grid>

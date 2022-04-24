@@ -1,12 +1,9 @@
-import { IconButton, Paper, Typography } from "@mui/material";
+import { Paper, Typography } from "@mui/material";
 import { Box, styled } from "@mui/system";
 import React from "react";
 import { Book, BookOrientation } from "../data/books";
 import { Pawn } from "../data/pawn-types";
 import PageDisplay from "./PageDisplay";
-import SwapHorizontalCircleIcon from "@mui/icons-material/SwapHorizontalCircle";
-import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
-import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import BookSearch from "./BookSearch";
 
 type Props = {
@@ -23,8 +20,6 @@ type Props = {
 const TitleText = styled(Typography)({
   padding: 5,
   color: "white",
-  display: "flex",
-  alignItems: "center",
 });
 
 const BlackPaper = styled(Paper)({
@@ -38,7 +33,7 @@ const BackBlackPaper = styled(Paper)({
     "repeating-linear-gradient(45deg, #0D0D0D, #0D0D0D 10px, #252525 10px, #252525 20px)",
 });
 
-const HeaderFooterBox = styled(Box)({
+const HeaderBox = styled(Box)({
   display: "flex",
   flexDirection: "row",
   justifyContent: "space-between",
@@ -65,31 +60,22 @@ const BookDisplay = ({
         alignItems: "center",
       }}
     >
-      <BookPaper elevation={1}>
-        <HeaderFooterBox>
+      <BookPaper onClick={flip} elevation={1}>
+        <HeaderBox>
           <BookSearch book={book} setBook={setBook} />
           <TitleText>
-            <IconButton onClick={flip} size="small">
-              <SwapHorizontalCircleIcon htmlColor="white" />
-            </IconButton>
             <strong>{orientation}</strong> (
             {orientation === "Front" ? book.frontName : book.backName})
           </TitleText>
-        </HeaderFooterBox>
+        </HeaderBox>
         <PageDisplay
           book={book}
           orientation={orientation}
           page={page}
           pawn={pawn}
+          nextPage={nextPage}
+          previousPage={previousPage}
         />
-        <HeaderFooterBox>
-          <IconButton onClick={previousPage} size="small">
-            <NavigateBeforeIcon htmlColor="white" />
-          </IconButton>
-          <IconButton onClick={nextPage} size="small">
-            <NavigateNextIcon htmlColor="white" />
-          </IconButton>
-        </HeaderFooterBox>
       </BookPaper>
     </Box>
   );

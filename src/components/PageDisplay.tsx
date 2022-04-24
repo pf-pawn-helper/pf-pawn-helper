@@ -10,6 +10,8 @@ type Props = {
   orientation: BookOrientation;
   page: number;
   pawn?: Pawn;
+  nextPage: () => void;
+  previousPage: () => void;
 };
 
 const SideBySideBox = styled(Box)(({ theme }) => ({
@@ -19,10 +21,27 @@ const SideBySideBox = styled(Box)(({ theme }) => ({
   marginTop: 0,
 }));
 
-const PageDisplay = ({ book, orientation, page, pawn }: Props) => {
+const PageDisplay = ({
+  book,
+  orientation,
+  page,
+  pawn,
+  nextPage,
+  previousPage,
+}: Props) => {
+  const previous = (e: React.MouseEvent<HTMLDivElement>) => {
+    e.stopPropagation();
+    previousPage();
+  };
+
+  const next = (e: React.MouseEvent<HTMLDivElement>) => {
+    e.stopPropagation();
+    nextPage();
+  };
+
   return (
     <SideBySideBox>
-      <Paper>
+      <Paper onClick={previous}>
         <SinglePageDisplay
           book={book}
           orientation={orientation}
@@ -31,7 +50,7 @@ const PageDisplay = ({ book, orientation, page, pawn }: Props) => {
         />
       </Paper>
       <Divider orientation="vertical" sx={{ margin: "1px" }} />
-      <Paper>
+      <Paper onClick={next}>
         <SinglePageDisplay
           book={book}
           orientation={orientation}
