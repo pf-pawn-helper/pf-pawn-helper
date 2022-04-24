@@ -1,8 +1,9 @@
 import { Book, BookOrientation } from "./books";
 import { Pawn } from "./pawn-types";
 import { BarbarianBardClericPawns } from "./pawns/barbarian-bard-cleric-pawns";
+import { DruidFighterMonkPawns } from "./pawns/druid-fighter-monk-pawns";
 
-const allPawns = [...BarbarianBardClericPawns];
+const allPawns = [...BarbarianBardClericPawns, ...DruidFighterMonkPawns];
 
 export const getFirstPawnByName = (name: string): Pawn | undefined =>
   allPawns.find((p) => !p.isSeparator && p.name === name) as Pawn;

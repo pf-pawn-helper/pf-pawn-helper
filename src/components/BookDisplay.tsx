@@ -7,6 +7,7 @@ import PageDisplay from "./PageDisplay";
 import SwapHorizontalCircleIcon from "@mui/icons-material/SwapHorizontalCircle";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
+import BookSearch from "./BookSearch";
 
 type Props = {
   book: Book;
@@ -16,6 +17,7 @@ type Props = {
   flip: () => void;
   nextPage: () => void;
   previousPage: () => void;
+  setBook: (book: Book) => void;
 };
 
 const TitleText = styled(Typography)({
@@ -50,6 +52,7 @@ const BookDisplay = ({
   flip,
   nextPage,
   previousPage,
+  setBook,
 }: Props) => {
   const BookPaper = orientation === "Front" ? BlackPaper : BackBlackPaper;
   return (
@@ -64,9 +67,7 @@ const BookDisplay = ({
     >
       <BookPaper elevation={1}>
         <HeaderFooterBox>
-          <TitleText>
-            <strong>Book</strong>: {book.fullName}
-          </TitleText>
+          <BookSearch book={book} setBook={setBook} />
           <TitleText>
             <IconButton onClick={flip} size="small">
               <SwapHorizontalCircleIcon htmlColor="white" />

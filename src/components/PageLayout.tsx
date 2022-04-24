@@ -74,6 +74,7 @@ const PageLayout = () => {
           flip={flip}
           nextPage={nextPage}
           previousPage={previousPage}
+          setBook={setBook}
         />
       </Grid>
     </Grid>

@@ -5,9 +5,7 @@ import { BookHelper } from "./pawn-helpers";
 export const BarbarianBardClericPawns: (Pawn | Separator)[] = new BookHelper(
   BarbarianBardClericBook
 )
-  .withPage("Front", 1, "Barbarian", (page) =>
-    page.withSeparatorInNumber(2).withSeparatorInNumber(4, "Dwarf")
-  )
+  .withSeparatorPage("Front", 1, "Barbarian", "Dwarf")
   .withPage("Front", 2, "Barbarian", (page) =>
     page
       .withStandardSlot(
@@ -100,11 +98,7 @@ export const BarbarianBardClericPawns: (Pawn | Separator)[] = new BookHelper(
       )
       .withStandardSlot("Human", "Tribal Leader", "Wild Lancer")
   )
-  .withPage("Front", 6, "Bard", (page) =>
-    page
-      .withSeparatorInNumber(2)
-      .withSeparatorInNumber(4, "Dwarf", "Halfling / Gnome")
-  )
+  .withSeparatorPage("Front", 6, "Bard", "Dwarf", "Halfling / Gnome")
   .withPage("Front", 7, "Bard", (page) =>
     page
       .withSlot((slot) =>
@@ -169,9 +163,7 @@ export const BarbarianBardClericPawns: (Pawn | Separator)[] = new BookHelper(
       )
       .withStandardSlot("Human", "Tavern Singer", "Tournament Champion")
   )
-  .withPage("Back", 1, "Cleric", (page) =>
-    page.withSeparatorInNumber(2).withSeparatorInNumber(4, "Dwarf")
-  )
+  .withSeparatorPage("Back", 1, "Cleric", "Dwarf")
   .withPage("Back", 2, "Cleric", (page) =>
     page
       .withStandardSlot(
@@ -238,8 +230,8 @@ export const BarbarianBardClericPawns: (Pawn | Separator)[] = new BookHelper(
       .withStandardSlot(
         "Human",
         "Cavern Defender",
-        "Fire Diabolist",
-        "Fire Cleric"
+        "Fire Cleric",
+        "Fire Diabolist"
       )
   )
   .withPage("Back", 5, "Cleric", (page) =>

@@ -16,6 +16,16 @@ export class BookHelper {
     this.book = book;
   }
 
+  withSeparatorPage = (
+    orientation: BookOrientation,
+    number: number,
+    pawnClass: PawnClass,
+    ...pawnRaces: PawnRace[]
+  ) =>
+    this.withPage(orientation, number, pawnClass, (page) =>
+      page.withSeparatorInNumber(2).withSeparatorInNumber(4, ...pawnRaces)
+    );
+
   withPage = (
     orientation: BookOrientation,
     number: number,
@@ -244,6 +254,12 @@ export class Slot {
   andMediumPawn = (race: PawnRace, name: string) => {
     const size = getRaceSize(race);
     this.pawns.push({ race, name: name, size, position: "Right" });
+    return this;
+  };
+
+  withPawn = (race: PawnRace, name: string, position: SlotPosition) => {
+    const size = getRaceSize(race);
+    this.pawns.push({ race, name: name, size, position });
     return this;
   };
 
