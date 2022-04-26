@@ -1,8 +1,8 @@
 import { Box, styled } from "@mui/system";
 
 export const PawnMargin = 6;
-export const PawnHeight = 170;
-export const PawnWidth = 100;
+export const PawnHeight = 136;
+export const PawnWidth = 80;
 export const PawnBorderRadius = 30;
 export const PawnBorderWidth = 1;
 
