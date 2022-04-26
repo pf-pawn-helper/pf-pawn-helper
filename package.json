@@ -1,7 +1,7 @@
 {
   "name": "pf-pawn-helper",
   "homepage": "https://pf-pawn-helper.github.io/",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.9.0",
