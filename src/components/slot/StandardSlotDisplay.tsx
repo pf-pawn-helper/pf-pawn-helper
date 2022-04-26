@@ -48,7 +48,7 @@ const getPawnOrPlaceholder = (
     );
   }
 
-  return <MediumPawnBox />;
+  return <MediumPawnBox key={position} />;
 };
 
 const StandardSlotDisplay = ({ pawns, pawn, isRight }: Props) => {
