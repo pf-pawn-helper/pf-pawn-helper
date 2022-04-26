@@ -32,6 +32,7 @@ const BlackPaper = styled(Paper)({
   margin: 2,
   width: "fit-content",
   background: FrontBookBackground,
+  cursor: "pointer",
 });
 
 const BackBlackPaper = styled(BlackPaper)({
@@ -42,6 +43,7 @@ const HeaderBox = styled(Box)({
   display: "flex",
   flexDirection: "row",
   justifyContent: "space-between",
+  cursor: "pointer",
 });
 
 const BookDisplay = ({
