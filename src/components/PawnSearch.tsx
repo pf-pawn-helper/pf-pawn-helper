@@ -104,34 +104,39 @@ const PawnSearch = ({ setPawnName }: Props) => {
   };
 
   return (
-    <AlignmentBox>
-      <Button Icon={FirstPage} disabled={index === 0} click={changePawn(0)} />
-      <Button
-        Icon={NavigateBefore}
-        disabled={index === 0}
-        click={changePawn(index - 1)}
-      />
-      <Avatar>{index + 1}</Avatar>
-      <AutocompleteInput
-        pawnName={pawnNames[index]}
-        setPawnName={setPawnAndProceed}
-      />
-      <Button
-        Icon={Clear}
-        click={clearPawn}
-        disabled={pawnNames.length === 0}
-      />
-      <Button
-        Icon={NavigateNext}
-        disabled={index === pawnNames.length}
-        click={changePawn(index + 1)}
-      />
-      <Button
-        Icon={LastPage}
-        disabled={index === pawnNames.length}
-        click={changePawn(pawnNames.length)}
-      />
-    </AlignmentBox>
+    <>
+      <Typography sx={{ textAlign: "center" }} variant="subtitle1">
+        Search for Multiple Pawns
+      </Typography>
+      <AlignmentBox>
+        <Button Icon={FirstPage} disabled={index === 0} click={changePawn(0)} />
+        <Button
+          Icon={NavigateBefore}
+          disabled={index === 0}
+          click={changePawn(index - 1)}
+        />
+        <Avatar>{index + 1}</Avatar>
+        <AutocompleteInput
+          pawnName={pawnNames[index]}
+          setPawnName={setPawnAndProceed}
+        />
+        <Button
+          Icon={Clear}
+          click={clearPawn}
+          disabled={pawnNames.length === 0}
+        />
+        <Button
+          Icon={NavigateNext}
+          disabled={index === pawnNames.length}
+          click={changePawn(index + 1)}
+        />
+        <Button
+          Icon={LastPage}
+          disabled={index === pawnNames.length}
+          click={changePawn(pawnNames.length)}
+        />
+      </AlignmentBox>
+    </>
   );
 };
 
