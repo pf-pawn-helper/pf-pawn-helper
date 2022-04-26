@@ -1,8 +1,9 @@
-import { Divider, Paper, styled } from "@mui/material";
+import { Divider, styled } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 import { Book, BookOrientation } from "../data/books";
 import { Pawn } from "../data/pawn-types";
+import FoldedPagePaper from "./FoldedPagePaper";
 import SinglePageDisplay from "./SinglePageDisplay";
 
 type Props = {
@@ -13,6 +14,10 @@ type Props = {
   nextPage: () => void;
   previousPage: () => void;
 };
+
+export const FrontBookBackground = "#0D0D0D";
+export const BackBookBackground =
+  "repeating-linear-gradient(45deg, #0D0D0D, #0D0D0D 10px, #252525 10px, #252525 20px)";
 
 const SideBySideBox = styled(Box)(({ theme }) => ({
   display: "flex",
@@ -41,16 +46,28 @@ const PageDisplay = ({
 
   return (
     <SideBySideBox>
-      <Paper onClick={previous}>
+      <FoldedPagePaper
+        shouldFold={page !== 1}
+        foldDirection="left"
+        pageBackground="white"
+        behindPageBackground={FrontBookBackground}
+        onClick={previous}
+      >
         <SinglePageDisplay
           book={book}
           orientation={orientation}
           page={page}
           pawn={pawn}
         />
-      </Paper>
+      </FoldedPagePaper>
       <Divider orientation="vertical" sx={{ margin: "1px" }} />
-      <Paper onClick={next}>
+      <FoldedPagePaper
+        shouldFold
+        foldDirection="right"
+        pageBackground="white"
+        behindPageBackground={FrontBookBackground}
+        onClick={next}
+      >
         <SinglePageDisplay
           book={book}
           orientation={orientation}
@@ -58,7 +75,7 @@ const PageDisplay = ({
           pawn={pawn}
           isRight
         />
-      </Paper>
+      </FoldedPagePaper>
     </SideBySideBox>
   );
 };

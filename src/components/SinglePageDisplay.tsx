@@ -34,7 +34,7 @@ const SinglePageDisplay = ({
   isRight = false,
 }: Props) => {
   return (
-    <Box sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
+    <>
       {[1, 2, 3, 4].map((slotNumber) => (
         <React.Fragment key={slotNumber}>
           <SlotBox>
@@ -51,7 +51,7 @@ const SinglePageDisplay = ({
           <Divider />
         </React.Fragment>
       ))}
-    </Box>
+    </>
   );
 };
 

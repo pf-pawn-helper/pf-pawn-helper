@@ -3,8 +3,12 @@ import { Box, styled } from "@mui/system";
 import React from "react";
 import { Book, BookOrientation } from "../data/books";
 import { Pawn } from "../data/pawn-types";
-import PageDisplay from "./PageDisplay";
+import PageDisplay, {
+  BackBookBackground,
+  FrontBookBackground,
+} from "./PageDisplay";
 import BookSearch from "./BookSearch";
+import Rotate90DegreesCcwIcon from "@mui/icons-material/Rotate90DegreesCcw";
 
 type Props = {
   book: Book;
@@ -20,17 +24,18 @@ type Props = {
 const TitleText = styled(Typography)({
   padding: 5,
   color: "white",
+  display: "flex",
+  alignItems: "center",
 });
 
 const BlackPaper = styled(Paper)({
   margin: 2,
   width: "fit-content",
-  background: "#0D0D0D",
+  background: FrontBookBackground,
 });
 
 const BackBlackPaper = styled(BlackPaper)({
-  background:
-    "repeating-linear-gradient(45deg, #0D0D0D, #0D0D0D 10px, #252525 10px, #252525 20px)",
+  background: BackBookBackground,
 });
 
 const HeaderBox = styled(Box)({
@@ -63,6 +68,7 @@ const BookDisplay = ({
         <HeaderBox>
           <BookSearch book={book} setBook={setBook} />
           <TitleText>
+            <Rotate90DegreesCcwIcon fontSize="small" htmlColor="white" />
             <strong>{orientation}</strong> (
             {orientation === "Front" ? book.frontName : book.backName})
           </TitleText>
