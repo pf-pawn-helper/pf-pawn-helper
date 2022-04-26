@@ -1,6 +1,6 @@
 {
   "name": "pf-pawn-helper",
-  "homepage": "https://pf-pawn-helper.github.io/",
+  "homepage": "https://pf-pawn-helper.github.io/pf-pawn-helper",
   "version": "0.3.0",
   "private": true,
   "dependencies": {
