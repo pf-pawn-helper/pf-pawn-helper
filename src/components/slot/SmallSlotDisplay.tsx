@@ -2,11 +2,7 @@ import { Box, styled } from "@mui/system";
 import React from "react";
 import { Pawn } from "../../data/pawn-types";
 import MediumPawn from "./pawn/MediumPawn";
-import MediumPawnBox, {
-  PawnHeight,
-  PawnMargin,
-  PawnWidth,
-} from "./pawn/MediumPawnBox";
+import MediumPawnBox, { SlotHeight, SlotWidth } from "./pawn/MediumPawnBox";
 import SmallPawn from "./pawn/SmallPawn";
 import SmallPawnBox from "./pawn/SmallPawnBox";
 
@@ -22,8 +18,8 @@ const SlotBox = styled(Box)({
   alignItems: "center",
   justifyContent: "center",
   flexWrap: "wrap",
-  height: `calc(${PawnHeight}px + 2 * ${PawnMargin}px)`,
-  width: `calc(3 * ${PawnWidth}px + 6 * ${PawnMargin}px)`,
+  height: SlotHeight,
+  width: SlotWidth,
 });
 
 const getSmallPawnOrPlaceholder = (thisPawn?: Pawn, pawn?: Pawn) => {

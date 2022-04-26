@@ -4,6 +4,10 @@ export const PawnMargin = 6;
 export const PawnHeight = 170;
 export const PawnWidth = 100;
 export const PawnBorderRadius = 30;
+export const PawnBorderWidth = 1;
+
+export const SlotWidth = PawnWidth * 3 + PawnMargin * 6 + PawnBorderWidth * 6;
+export const SlotHeight = PawnHeight + PawnMargin * 2 + PawnBorderWidth * 2;
 
 const MediumPawnBox = styled(Box)({
   // Ratio is 1:1.7

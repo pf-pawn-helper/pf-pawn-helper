@@ -2,7 +2,7 @@ import { Typography } from "@mui/material";
 import { Box, styled } from "@mui/system";
 import React from "react";
 import { Separator } from "../../data/pawn-types";
-import { PawnHeight, PawnMargin, PawnWidth } from "./pawn/MediumPawnBox";
+import { SlotHeight, SlotWidth } from "./pawn/MediumPawnBox";
 
 type Props = {
   separator?: Separator;
@@ -13,8 +13,8 @@ const CenterBox = styled(Box)({
   flexDirection: "column",
   alignItems: "center",
   justifyContent: "center",
-  height: `calc(${PawnHeight}px + 2 * ${PawnMargin}px)`,
-  width: `calc(3 * ${PawnWidth}px + 6 * ${PawnMargin}px)`,
+  height: SlotHeight,
+  width: SlotWidth,
 });
 
 const SeparatorDisplay = ({ separator }: Props) => {

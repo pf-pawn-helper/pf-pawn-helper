@@ -1,4 +1,4 @@
-import { CssBaseline } from "@mui/material";
+import { Grid } from "@mui/material";
 import { Box, styled } from "@mui/system";
 import React, { useEffect, useState } from "react";
 import {
@@ -15,14 +15,7 @@ const defaultBook = BarbarianBardClericBook;
 const defaultOrientation = "Front";
 const defaultPage = 1;
 
-const CenterAlignBox = styled(Box)({
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  width: "100%",
-});
-
-const FitContentBox = styled(Box)({
+const BookWidthBox = styled(Box)({
   width: "fit-content",
 });
 
@@ -67,9 +60,14 @@ const PageLayout = () => {
   };
 
   return (
-    <CenterAlignBox>
-      <CssBaseline />
-      <FitContentBox>
+    <Grid
+      container
+      spacing={0}
+      direction="column"
+      alignItems="center"
+      justifyContent="center"
+    >
+      <BookWidthBox>
         <BookDisplay
           book={book}
           orientation={orientation}
@@ -81,8 +79,8 @@ const PageLayout = () => {
           setBook={changeBook}
         />
         <PawnSearch setPawnName={setPawnName} />
-      </FitContentBox>
-    </CenterAlignBox>
+      </BookWidthBox>
+    </Grid>
   );
 };
 
