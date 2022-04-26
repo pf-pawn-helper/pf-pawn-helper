@@ -1,5 +1,5 @@
-import { CssBaseline, Grid, Paper } from "@mui/material";
-import { Box } from "@mui/system";
+import { CssBaseline } from "@mui/material";
+import { Box, styled } from "@mui/system";
 import React, { useEffect, useState } from "react";
 import {
   getFirstPawnByName,
@@ -14,6 +14,17 @@ import PawnSearch from "./PawnSearch";
 const defaultBook = BarbarianBardClericBook;
 const defaultOrientation = "Front";
 const defaultPage = 1;
+
+const CenterAlignBox = styled(Box)({
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  width: "100%",
+});
+
+const FitContentBox = styled(Box)({
+  width: "fit-content",
+});
 
 const PageLayout = () => {
   const [pawnName, setPawnName] = useState<string>("");
@@ -56,21 +67,9 @@ const PageLayout = () => {
   };
 
   return (
-    <Grid container component="main" sx={{ height: "100vh" }}>
+    <CenterAlignBox>
       <CssBaseline />
-      <Grid item component={Paper} xs={false} sm={4} md={4} elevation={6}>
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            padding: 1,
-          }}
-        >
-          <PawnSearch pawnName={pawnName} setPawnName={setPawnName} />
-        </Box>
-      </Grid>
-      <Grid item component={Paper} square xs={12} sm={8} md={8}>
+      <FitContentBox>
         <BookDisplay
           book={book}
           orientation={orientation}
@@ -81,8 +80,9 @@ const PageLayout = () => {
           previousPage={previousPage}
           setBook={changeBook}
         />
-      </Grid>
-    </Grid>
+        <PawnSearch setPawnName={setPawnName} />
+      </FitContentBox>
+    </CenterAlignBox>
   );
 };
 

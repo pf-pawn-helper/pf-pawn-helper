@@ -12,6 +12,14 @@ const allPawns = [
   ...SorcererWizardPawns,
 ];
 
+const unique = (array: string[]) => [...Array.from(new Set(array))];
+
+export const UniquePawnNames = unique(
+  allPawns
+    .filter((p) => !p.isSeparator)
+    .map((p) => (p.isSeparator ? "separator" : p.name))
+).sort();
+
 export const getFirstPawnByName = (name: string): Pawn | undefined =>
   allPawns.find((p) => !p.isSeparator && p.name === name) as Pawn;
 

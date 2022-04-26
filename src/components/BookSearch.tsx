@@ -20,6 +20,7 @@ const BookSearch = ({ book, setBook }: Props) => {
   return (
     <Box onClick={(e) => e.stopPropagation()}>
       <Autocomplete
+        disableClearable
         options={names}
         renderInput={(params) => <SearchField variant="standard" {...params} />}
         value={book.fullName}
