@@ -28,7 +28,7 @@ const BlackPaper = styled(Paper)({
   background: "#0D0D0D",
 });
 
-const BackBlackPaper = styled(Paper)({
+const BackBlackPaper = styled(BlackPaper)({
   background:
     "repeating-linear-gradient(45deg, #0D0D0D, #0D0D0D 10px, #252525 10px, #252525 20px)",
 });
@@ -53,7 +53,6 @@ const BookDisplay = ({
   return (
     <Box
       sx={{
-        height: "100%",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
