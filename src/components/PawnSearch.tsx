@@ -103,8 +103,6 @@ const PawnSearch = ({ setPawnName }: Props) => {
     setPawnName(pawnNames[Math.min(index, pawnNames.length - 1)]);
   };
 
-  console.log(pawnNames);
-
   return (
     <AlignmentBox>
       <Button Icon={FirstPage} disabled={index === 0} click={changePawn(0)} />
