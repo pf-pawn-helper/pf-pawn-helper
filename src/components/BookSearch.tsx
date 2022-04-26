@@ -21,6 +21,7 @@ const BookSearch = ({ book, setBook }: Props) => {
     <Box onClick={(e) => e.stopPropagation()}>
       <Autocomplete
         disableClearable
+        blurOnSelect
         options={names}
         renderInput={(params) => <SearchField variant="standard" {...params} />}
         value={book.fullName}
