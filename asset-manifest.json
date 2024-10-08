@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/pf-pawn-helper/static/js/main.deaccae6.js",
-    "static/js/787.16bb17aa.chunk.js": "/pf-pawn-helper/static/js/787.16bb17aa.chunk.js",
+    "main.js": "/pf-pawn-helper/static/js/main.e9140794.js",
+    "static/js/453.32494878.chunk.js": "/pf-pawn-helper/static/js/453.32494878.chunk.js",
     "index.html": "/pf-pawn-helper/index.html",
-    "main.deaccae6.js.map": "/pf-pawn-helper/static/js/main.deaccae6.js.map",
-    "787.16bb17aa.chunk.js.map": "/pf-pawn-helper/static/js/787.16bb17aa.chunk.js.map"
+    "main.e9140794.js.map": "/pf-pawn-helper/static/js/main.e9140794.js.map",
+    "453.32494878.chunk.js.map": "/pf-pawn-helper/static/js/453.32494878.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.deaccae6.js"
+    "static/js/main.e9140794.js"
   ]
 }
