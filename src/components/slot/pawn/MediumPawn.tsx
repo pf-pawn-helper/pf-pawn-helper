@@ -30,7 +30,7 @@ const MediumPawn = ({ pawn, selected }: Props) => {
   return (
     <PawnImageBox>
       <PawnImage
-        src={`pf-pawn-helper/pawns/${pawn.name.toUpperCase()}.jpg`}
+        src={`/pf-pawn-helper/pawns/${pawn.name.toUpperCase()}.jpg`}
         alt={pawn.name}
       />
     </PawnImageBox>
