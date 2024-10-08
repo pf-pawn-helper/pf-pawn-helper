@@ -3,7 +3,7 @@ import { Box, styled } from "@mui/system";
 export const PawnMargin = 6;
 export const PawnHeight = 136;
 export const PawnWidth = 80;
-export const PawnBorderRadius = 30;
+export const PawnBorderRadius = 26;
 export const PawnBorderWidth = 1;
 
 export const SlotWidth = PawnWidth * 3 + PawnMargin * 6 + PawnBorderWidth * 6;

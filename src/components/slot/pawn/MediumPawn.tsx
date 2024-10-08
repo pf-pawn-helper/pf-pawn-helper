@@ -1,4 +1,3 @@
-import { Typography } from "@mui/material";
 import { styled } from "@mui/system";
 import React from "react";
 import { Pawn } from "../../../data/pawn-types";
@@ -9,23 +8,32 @@ type Props = {
   selected: boolean;
 };
 
-const SelectedTypography = styled(Typography)({
-  backgroundColor: "yellow",
+const PawnBox = styled(MediumPawnBox)({
+  border: "1px solid transparent",
+  borderTopLeftRadius: PawnBorderRadius,
+  borderTopRightRadius: PawnBorderRadius,
 });
 
-const PawnBox = styled(MediumPawnBox)({
-  border: "1px solid black",
+const SelectedPawnBox = styled(PawnBox)({
+  border: "1px solid transparent",
+  filter: "drop-shadow(0 0 5px red)",
+});
+
+const PawnImage = styled("img")({
   borderTopLeftRadius: PawnBorderRadius,
   borderTopRightRadius: PawnBorderRadius,
 });
 
 const MediumPawn = ({ pawn, selected }: Props) => {
-  const Text = selected ? SelectedTypography : Typography;
+  const PawnImageBox = selected ? SelectedPawnBox : PawnBox;
 
   return (
-    <PawnBox>
-      <Text variant="caption">{pawn.name}</Text>
-    </PawnBox>
+    <PawnImageBox>
+      <PawnImage
+        src={`pf-pawn-helper/pawns/${pawn.name.toUpperCase()}.jpg`}
+        alt={pawn.name}
+      />
+    </PawnImageBox>
   );
 };
 
