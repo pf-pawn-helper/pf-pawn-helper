@@ -3,7 +3,7 @@ import { Box, styled } from "@mui/system";
 export const SmallPawnMargin = 6;
 export const SmallPawnHeight = 60;
 export const SmallPawnWidth = 80;
-export const SmallPawnBorderRadius = 25;
+export const SmallPawnBorderRadius = 20;
 
 const SmallPawnBox = styled(Box)({
   // Ratio is 1:0.75
