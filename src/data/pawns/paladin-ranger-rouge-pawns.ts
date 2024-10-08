@@ -22,7 +22,7 @@ export const PaladinRangerRoguePawns: (Pawn | Separator)[] = new BookHelper(
         "Desert Protector",
         "Elven Honorblade"
       )
-      .withStandardSlot("Elf / Half-Elf", "Heir Apparent", "Mithril Master")
+      .withStandardSlot("Elf / Half-Elf", "Heir Apparent", "Mithral Master")
       .withSeparator("Orc / Half-Orc", "Halfling / Gnome")
   )
   .withPage("Front", 4, "Paladin", (page) =>
@@ -107,7 +107,7 @@ export const PaladinRangerRoguePawns: (Pawn | Separator)[] = new BookHelper(
   )
   .withPage("Front", 9, "Ranger", (page) =>
     page
-      .withStandardSlot("Human", "Falconer", "Fieldslayer", "Mage Hunter")
+      .withStandardSlot("Human", "Falconer", "Fiendslayer", "Mage Hunter")
       .withStandardSlot("Human", "Poacher", "Supreme Hunter", "Swampwalker")
       .withStandardSlot("Human", "Swampwalker", "Novice Scout", "Novice Scout")
       .withStandardSlot("Human", "Novice Scout")
@@ -169,7 +169,7 @@ export const PaladinRangerRoguePawns: (Pawn | Separator)[] = new BookHelper(
           .withSmallPawns(
             "Halfling / Gnome",
             "Daring Bravo",
-            "Fiesty Hotspur",
+            "Feisty Hotspur",
             "Guild Initiate",
             "Guild Initiate"
           )
@@ -190,7 +190,7 @@ export const PaladinRangerRoguePawns: (Pawn | Separator)[] = new BookHelper(
   )
   .withPage("Back", 5, "Rogue", (page) =>
     page
-      .withStandardSlot("Human", "Backstrike", "Blade lord", "Chain Mauler")
+      .withStandardSlot("Human", "Blackstrike", "Blade lord", "Chain Mauler")
       .withStandardSlot("Human", "Cutpurse", "Cutpurse", "Dancing Dervish")
       .withStandardSlot("Human", "Deadly Spy", "Dilettante", "Freelance Thief")
       .withStandardSlot(

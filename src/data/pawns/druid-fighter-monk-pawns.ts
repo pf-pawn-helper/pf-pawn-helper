@@ -71,7 +71,7 @@ export const DruidFighterMonkPawns: (Pawn | Separator)[] = new BookHelper(
             "Halfling / Gnome",
             "Accomplished Angler",
             "Dark Nature Priest",
-            "Fey Fiend",
+            "Fey Friend",
             "Lini, Druid"
           )
           .andMediumPawn("Human", "Mud Shaman")

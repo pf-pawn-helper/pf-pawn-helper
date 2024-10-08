@@ -58,8 +58,8 @@ export const BarbarianBardClericPawns: (Pawn | Separator)[] = new BookHelper(
     page
       .withStandardSlot(
         "Orc / Half-Orc",
-        "Honourable Outcast",
-        "Honourable Outcast",
+        "Honorable Outcast",
+        "Honorable Outcast",
         "Journeyman Carpenter"
       )
       .withStandardSlot(
