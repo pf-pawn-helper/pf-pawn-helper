@@ -10,6 +10,7 @@ import { BarbarianBardClericBook, Book, BookOrientation } from "../data/books";
 import { Pawn } from "../data/pawn-types";
 import BookDisplay from "./BookDisplay";
 import PawnSearch from "./PawnSearch";
+import { usePawnState } from "./state/usePawnState";
 
 const defaultBook = BarbarianBardClericBook;
 const defaultOrientation = "Front";
@@ -20,7 +21,7 @@ const BookWidthBox = styled(Box)({
 });
 
 const PageLayout = () => {
-  const [pawnName, setPawnName] = useState<string>("");
+  const { pawnName, setPawnName, pawnNames, setPawnNames } = usePawnState();
   const [book, setBook] = useState<Book>(defaultBook);
   const [orientation, setOrientation] =
     useState<BookOrientation>(defaultOrientation);
@@ -78,7 +79,11 @@ const PageLayout = () => {
           previousPage={previousPage}
           setBook={changeBook}
         />
-        <PawnSearch setPawnName={setPawnName} />
+        <PawnSearch
+          setPawnName={setPawnName}
+          pawnNames={pawnNames}
+          setPawnNames={setPawnNames}
+        />
       </BookWidthBox>
     </Grid>
   );

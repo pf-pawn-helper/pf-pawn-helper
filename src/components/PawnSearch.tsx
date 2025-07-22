@@ -19,6 +19,8 @@ import {
 
 type Props = {
   setPawnName: (name: string) => void;
+  pawnNames: string[];
+  setPawnNames: (names: string[]) => void;
 };
 
 const AlignmentBox = styled(Box)({
