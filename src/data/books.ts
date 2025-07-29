@@ -26,8 +26,8 @@ export const PaladinRangerRogueBook: Book = {
 
 export const SorcererWizardBook: Book = {
   fullName: "Sorcerer, Wizard, Villager",
-  frontName: "Sorcerer",
-  backName: "Wizard, Villager",
+  frontName: "Sorcerer, Villager",
+  backName: "Wizard",
 };
 
 export const AllBooks: Book[] = [
