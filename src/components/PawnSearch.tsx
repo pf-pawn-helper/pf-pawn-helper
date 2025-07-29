@@ -3,7 +3,8 @@ import {
   Autocomplete,
   Avatar,
   Box,
-  IconButton,
+  Button,
+  IconButton as IconButtonMui,
   TextField,
   Typography,
 } from "@mui/material";
@@ -31,7 +32,7 @@ const AlignmentBox = styled(Box)({
   width: "100%",
 });
 
-const Button = ({
+const IconButton = ({
   Icon,
   click,
   disabled,
@@ -40,9 +41,9 @@ const Button = ({
   click?: () => void;
   disabled?: boolean;
 }) => (
-  <IconButton onClick={click} disabled={disabled}>
+  <IconButtonMui onClick={click} disabled={disabled}>
     <Icon />
-  </IconButton>
+  </IconButtonMui>
 );
 
 const AutocompleteInput = ({
@@ -99,6 +100,12 @@ const PawnSearch = ({ setPawnName, pawnNames, setPawnNames }: Props) => {
     setPawnName(newPawnNames[newIndex]);
   };
 
+  const clearAllPawns = () => {
+    setIndex(0);
+    setPawnNames([]);
+    setPawnName("");
+  };
+
   const changePawn = (index: number) => () => {
     setIndex(index);
     setPawnName(pawnNames[Math.min(index, pawnNames.length - 1)]);
@@ -107,11 +114,16 @@ const PawnSearch = ({ setPawnName, pawnNames, setPawnNames }: Props) => {
   return (
     <>
       <Typography sx={{ textAlign: "center" }} variant="subtitle1">
-        Search for Multiple Pawns
+        Search for Multiple Pawns{" "}
+        <Button onClick={clearAllPawns}>Clear all</Button>
       </Typography>
       <AlignmentBox>
-        <Button Icon={FirstPage} disabled={index === 0} click={changePawn(0)} />
-        <Button
+        <IconButton
+          Icon={FirstPage}
+          disabled={index === 0}
+          click={changePawn(0)}
+        />
+        <IconButton
           Icon={NavigateBefore}
           disabled={index === 0}
           click={changePawn(index - 1)}
@@ -121,17 +133,17 @@ const PawnSearch = ({ setPawnName, pawnNames, setPawnNames }: Props) => {
           pawnName={pawnNames[index]}
           setPawnName={setPawnAndProceed}
         />
-        <Button
+        <IconButton
           Icon={Clear}
           click={clearPawn}
           disabled={pawnNames.length === 0}
         />
-        <Button
+        <IconButton
           Icon={NavigateNext}
           disabled={index === pawnNames.length}
           click={changePawn(index + 1)}
         />
-        <Button
+        <IconButton
           Icon={LastPage}
           disabled={index === pawnNames.length}
           click={changePawn(pawnNames.length)}
