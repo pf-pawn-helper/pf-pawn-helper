@@ -74,8 +74,7 @@ const AutocompleteInput = ({
   );
 };
 
-const PawnSearch = ({ setPawnName }: Props) => {
-  const [pawnNames, setPawnNames] = useState<string[]>([]);
+const PawnSearch = ({ setPawnName, pawnNames, setPawnNames }: Props) => {
   const [index, setIndex] = useState<number>(0);
 
   const setPawnAndProceed = (name: string) => {
