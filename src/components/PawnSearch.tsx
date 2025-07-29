@@ -113,6 +113,15 @@ const PawnSearch = ({ setPawnName, pawnNames, setPawnNames }: Props) => {
 
   return (
     <>
+      <Typography
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+        }}
+        variant="caption"
+      >
+        v{process.env.REACT_APP_VERSION}
+      </Typography>
       <Typography sx={{ textAlign: "center" }} variant="subtitle1">
         Search for Multiple Pawns{" "}
         <Button onClick={clearAllPawns}>Clear all</Button>
