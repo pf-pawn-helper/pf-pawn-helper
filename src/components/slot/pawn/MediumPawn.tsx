@@ -8,10 +8,14 @@ type Props = {
   selected: boolean;
 };
 
-const PawnBox = styled(MediumPawnBox)({
-  border: "1px solid transparent",
+const PlaceholderPawnBox = styled(MediumPawnBox)({
+  border: "1px solid grey",
   borderTopLeftRadius: PawnBorderRadius,
   borderTopRightRadius: PawnBorderRadius,
+});
+
+const PawnBox = styled(PlaceholderPawnBox)({
+  border: "1px solid transparent",
 });
 
 const SelectedPawnBox = styled(PawnBox)({
@@ -24,7 +28,7 @@ const MediumPawn = ({ pawn, selected }: Props) => {
 
   return (
     <PawnImageBox>
-      <PawnImage pawn={pawn} size="medium" />
+      <PawnImage pawn={pawn} size="medium" Placeholder={PlaceholderPawnBox} />
     </PawnImageBox>
   );
 };

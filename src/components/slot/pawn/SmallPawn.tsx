@@ -8,11 +8,15 @@ type Props = {
   selected: boolean;
 };
 
-const PawnBox = styled(SmallPawnBox)({
-  border: "1px solid transparent",
+const PlaceholderPawnBox = styled(SmallPawnBox)({
+  border: "1px solid grey",
   // We are rotated 180deg to get the text to work
   borderTopRightRadius: SmallPawnBorderRadius,
   borderBottomRightRadius: SmallPawnBorderRadius,
+});
+
+const PawnBox = styled(PlaceholderPawnBox)({
+  border: "1px solid transparent",
 });
 
 const SelectedPawnBox = styled(PawnBox)({
@@ -25,7 +29,7 @@ const SmallPawn = ({ pawn, selected }: Props) => {
 
   return (
     <PawnImageBox>
-      <PawnImage pawn={pawn} size="small" />
+      <PawnImage pawn={pawn} size="small" Placeholder={PlaceholderPawnBox} />
     </PawnImageBox>
   );
 };
