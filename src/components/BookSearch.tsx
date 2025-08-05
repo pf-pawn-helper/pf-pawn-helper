@@ -1,6 +1,5 @@
-import { Autocomplete, TextField } from "@mui/material";
-import { Box, styled } from "@mui/system";
-import React from "react";
+import { MenuItem, Select } from "@mui/material";
+import { Box } from "@mui/system";
 import { AllBooks, BarbarianBardClericBook, Book } from "../data/books";
 
 type Props = {
@@ -8,29 +7,29 @@ type Props = {
   setBook: (book: Book) => void;
 };
 
-const SearchField = styled(TextField)({
-  backgroundColor: "white",
-  width: 300,
-  margin: 6,
-});
-
 const BookSearch = ({ book, setBook }: Props) => {
   const names = AllBooks.map((b) => b.fullName);
 
   return (
     <Box onClick={(e) => e.stopPropagation()}>
-      <Autocomplete
-        disableClearable
-        blurOnSelect
-        options={names}
-        renderInput={(params) => <SearchField variant="standard" {...params} />}
+      <Select
+        sx={{ backgroundColor: "white", margin: "6px", width: 300 }}
         value={book.fullName}
-        onChange={(_, val) =>
+        onChange={(event) =>
           setBook(
-            AllBooks.find((b) => b.fullName === val) ?? BarbarianBardClericBook
+            AllBooks.find((b) => b.fullName === event.target.value) ??
+              BarbarianBardClericBook
           )
         }
-      />
+        size="small"
+        inputProps={{ sx: { padding: 0.5 } }}
+      >
+        {names.map((value) => (
+          <MenuItem sx={{ margin: 0 }} key={value} value={value}>
+            {value}
+          </MenuItem>
+        ))}
+      </Select>
     </Box>
   );
 };
