@@ -1,7 +1,7 @@
 import { styled } from "@mui/system";
-import React from "react";
 import { Pawn } from "../../../data/pawn-types";
 import MediumPawnBox, { PawnBorderRadius } from "./MediumPawnBox";
+import { PawnImage } from "./PawnImage";
 
 type Props = {
   pawn: Pawn;
@@ -19,20 +19,12 @@ const SelectedPawnBox = styled(PawnBox)({
   filter: "drop-shadow(0 0 5px red)",
 });
 
-const PawnImage = styled("img")({
-  borderTopLeftRadius: PawnBorderRadius,
-  borderTopRightRadius: PawnBorderRadius,
-});
-
 const MediumPawn = ({ pawn, selected }: Props) => {
   const PawnImageBox = selected ? SelectedPawnBox : PawnBox;
 
   return (
     <PawnImageBox>
-      <PawnImage
-        src={`/pf-pawn-helper/pawns/${pawn.name.toUpperCase()}.jpg`}
-        alt={pawn.name}
-      />
+      <PawnImage pawn={pawn} size="medium" />
     </PawnImageBox>
   );
 };

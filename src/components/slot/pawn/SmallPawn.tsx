@@ -1,10 +1,7 @@
 import { styled } from "@mui/system";
 import { Pawn } from "../../../data/pawn-types";
-import SmallPawnBox, {
-  SmallPawnBorderRadius,
-  SmallPawnHeight,
-  SmallPawnWidth,
-} from "./SmallPawnBox";
+import SmallPawnBox, { SmallPawnBorderRadius } from "./SmallPawnBox";
+import { PawnImage } from "./PawnImage";
 
 type Props = {
   pawn: Pawn;
@@ -23,26 +20,12 @@ const SelectedPawnBox = styled(PawnBox)({
   filter: "drop-shadow(0 0 5px red)",
 });
 
-const PawnImage = styled("img")({
-  borderTopLeftRadius: SmallPawnBorderRadius,
-  borderTopRightRadius: SmallPawnBorderRadius,
-  // hacky hacky, I don't know why I must specify these...
-  position: "absolute",
-  left: "10px",
-  width: SmallPawnHeight,
-  height: SmallPawnWidth,
-  transform: "rotate(90deg)",
-});
-
 const SmallPawn = ({ pawn, selected }: Props) => {
   const PawnImageBox = selected ? SelectedPawnBox : PawnBox;
 
   return (
     <PawnImageBox>
-      <PawnImage
-        src={`/pf-pawn-helper/pawns/${pawn.name.toUpperCase()}.jpg`}
-        alt={pawn.name}
-      />
+      <PawnImage pawn={pawn} size="small" />
     </PawnImageBox>
   );
 };
